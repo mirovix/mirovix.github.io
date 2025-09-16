@@ -173,6 +173,36 @@
             z-index:2;
             white-space:nowrap;
         }
+        @media(max-width:768px){
+            nav .nav-container {
+                flex-direction: column;
+                display: none; /* nascosto di default */
+            }
+            nav.active .nav-container {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+            .timeline::before { left: 8px; width: 2px; } /* linea centrale più sottile */
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding: 15px 20px;
+                text-align: left;
+            }
+            .timeline-item .content::after { display: none; } /* niente freccia laterale */
+            }
+            .timeline-item .content {
+                width: 100%;
+                box-sizing: border-box;
+                margin: 10px 0;
+                padding: 20px;
+                border-radius: 12px;
+                background: #fff;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
     </style>
 </head>
 <body>
