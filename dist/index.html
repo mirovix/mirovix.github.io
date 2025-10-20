@@ -227,6 +227,27 @@
                 line-height: 1.4rem;
             }
         }
+
+        .details {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateY(6px);
+            transition:
+                max-height 0.6s ease-in-out,
+                opacity 0.4s ease,
+                transform 0.4s ease;
+        }
+
+        .project:hover .details,
+        .timeline-item .content:hover .details,
+        .award-card:hover .details {
+            max-height: 600px; /* fluido ma non infinito */
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
     </style>
 </head>
 <body>
@@ -271,7 +292,7 @@
     <div class="timeline">
 
         <div class="timeline-item left">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">11/2024 - 11/2027</div>
                 <h3>PhD Student in Robotics and AI</h3>
                 <p>DEI - IAS LAB, University of Padua</p>
@@ -283,7 +304,7 @@
         </div>
 
         <div class="timeline-item right">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">10/2020 - 07/2022</div>
                 <h3>M.Sc. in Computer Engineering</h3>
                 <h3>AI & Robotics</h3>
@@ -296,7 +317,7 @@
         </div>
 
         <div class="timeline-item left">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">10/2017 - 07/2020</div>
                 <h3>B.Sc. in Computer Engineering</h3>
                 <p>University of Padua | GPA: 26/30</p>
@@ -389,7 +410,7 @@
 <section id="other-projects" class="container">
     <h2 class="section-title">Other Projects</h2>
     <div class="projects-list">
-                <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+                <div class="project" >
                     <h3>Code Refactoring for the ROS-Neuro <a href="https://github.com/rosneuro/" target="_blank">[Code]</a></h3>
                     <p>Unit testing and code refactoring to improve reliability and scalability.</p>
                     <div class="details" style="display:none;">
@@ -398,7 +419,7 @@
                 </div>
 
         <!-- ERMES Project -->
-        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+        <div class="project" >
             <h3>ERMES Project — Autonomous Docking Manoeuvre Testing for CubeSats</h3>
             <p>ESA “Fly Your Thesis!” Programme — University of Padua.</p>
             <div class="details" style="display:none;">
@@ -407,7 +428,7 @@
         </div>
 
         <!-- RL Thesis -->
-        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+        <div class="project" >
             <h3>Reinforcement Learning in Shared Intelligence Systems for Mobile Robots
                 <a href="https://github.com/mirovix/Master_Thesis" target="_blank">[Code]</a>
                 <a href="https://github.com/mirovix/Master_Thesis/blob/main/Reinforcement_learning_in_shared_intelligence_systems_for_mobile_robots.pdf" target="_blank">[Thesis]</a>
@@ -428,7 +449,7 @@
 <!--    <div class="projects-list">-->
 
 <!--        &lt;!&ndash; ROS-Neuro &ndash;&gt;-->
-<!--        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+<!--        <div class="project" >-->
 <!--            <h3>Code Refactoring for the ROS-Neuro <a href="https://github.com/rosneuro/" target="_blank">[Code]</a></h3>-->
 <!--            <p>Unit testing and code refactoring to improve reliability and scalability.</p>-->
 <!--            <div class="details" style="display:none;">-->
@@ -437,7 +458,7 @@
 <!--        </div>-->
 
 <!--        &lt;!&ndash; AML &ndash;&gt;-->
-<!--        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+<!--        <div class="project" >-->
 <!--            <h3>Anti-Money Laundering Anomaly Detection-->
 <!--                <a href="https://www.netechgroup.it/software-antiriciclaggio/kassandra/" target="_blank">[Kassandra]</a> - -->
 <!--                <a href="https://www.netechgroup.it/software-antiriciclaggio/prioritas/" target="_blank">[Prioritas]</a>-->
@@ -455,7 +476,7 @@
 <!--        </div>-->
 
 <!--        &lt;!&ndash; ERMES &ndash;&gt;-->
-<!--        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+<!--        <div class="project" >-->
 <!--            <h3>Experimental Rendezvous in Microgravity Environment Study (ERMES) <a href="https://link.springer.com/article/10.1007/s42496-025-00247-7" target="_blank">[Paper]</a></h3>-->
 <!--            <p>CubeSat Onboard Computer System design for space docking experiments.</p>-->
 <!--            <div class="details" style="display:none;">-->
@@ -471,7 +492,7 @@
 <!--        </div>-->
 
 <!--        &lt;!&ndash; Thesis &ndash;&gt;-->
-<!--        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+<!--        <div class="project" >-->
 <!--            <h3>Reinforcement Learning in Shared Intelligence for Mobile Robots-->
 <!--                <a href="https://github.com/mirovix/Master_Thesis/blob/main/Reinforcement_learning_in_shared_intelligence_systems_for_mobile_robots.pdf" target="_blank">[Thesis]</a>-->
 <!--                <a href="https://github.com/mirovix/Master_Thesis/" target="_blank">[Code]</a>-->
@@ -486,7 +507,7 @@
 <!--        </div>-->
 
 <!--        &lt;!&ndash; Boat detection-->
-<!--        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+<!--        <div class="project" >-->
 <!--            <h3>Machine Learning Project for Boat Detection-->
 <!--                <a href="https://github.com/mirovix/Boat_detection" target="_blank">[Code]</a>-->
 <!--                <a href="https://github.com/mirovix/Boat_detection/blob/main/CV_Report.pdf" target="_blank">[Report]</a>-->
@@ -500,7 +521,7 @@
 <!--        </div>-->
 
 <!--        TSP-->
-<!--        <div class="project" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+<!--        <div class="project" >-->
 <!--            <h3>Solving the Traveling Salesman Problem (TSP)-->
 <!--                <a href="https://github.com/mirovix/ProjectsPapers/blob/main/Projects/Solutions%20for%20TSP%20(Traveling%20Salesman%20Problem).pdf" target="_blank">[Thesis]</a>-->
 <!--            </h3>-->
@@ -522,7 +543,7 @@
     <div class="timeline">
 
         <div class="timeline-item left">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">11/2024 - Present</div>
                 <h3>ML Researcher - Nordest Technology</h3>
                 <div class="details">
@@ -533,7 +554,7 @@
         </div>
 
         <div class="timeline-item right">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">01/2023 - 11/2024</div>
                 <h3>Lead Software Engineer in Machine Learning — Nordest Technology</h3>
                 <div class="details">
@@ -549,7 +570,7 @@
 
 
         <!--        <div class="timeline-item left">-->
-        <!--            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+        <!--            <div class="content" >-->
         <!--                <div class="date" style="font-weight:700; color:#555;">02/2024 - 06/2024</div>-->
         <!--                <h3>Software Engineer — DEI, IAS LAB (University of Padua)</h3>-->
         <!--                <p>Software engineer working on refactoring code for ROS-Neuro system.</p>-->
@@ -563,7 +584,7 @@
         <!--        </div>-->
 
         <!--        <div class="timeline-item right">-->
-        <!--            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">-->
+        <!--            <div class="content" >-->
         <!--                <div class="date" style="font-weight:700; color:#555;">09/2022 - Present</div>-->
         <!--                <h3>Mentee at LeadTheFuture Mentorship</h3>-->
         <!--                <p>Among the few Italian students selected to be mentees for LeadTheFuture, a leading mentorship non-profit organization for students in STEM, with acceptance rate below 20%.</p>-->
@@ -574,7 +595,7 @@
         <!--        </div>-->
 
         <div class="timeline-item left">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">04/2022 - 01/2023</div>
                 <h3>Software Engineer in Machine Learning — Nordest Technology</h3>
                 <div class="details">
@@ -585,7 +606,7 @@
         </div>
 
         <div class="timeline-item right">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">12/2021 - 11/2022</div>
                 <h3>Software Engineer — European Space Agency (ESA) & DII (University of Padua)</h3>
                 <div class="details">
@@ -598,7 +619,7 @@
         </div>
 
         <div class="timeline-item left">
-            <div class="content" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="content" >
                 <div class="date" style="font-weight:700; color:#555;">10/2021 - 07/2022</div>
                 <h3>Research Engineer Intern — DEI, IAS LAB (University of Padua)</h3>
                 <div class="details">
@@ -618,7 +639,7 @@
         <div class="awards-grid">
 
             <!-- ECMR Workshop -->
-            <div class="award-card" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="award-card" >
                 <i class="fas fa-chalkboard-teacher"></i>
                 <div>
                     <h4>
@@ -634,7 +655,7 @@
             </div>
 
             <!-- Cambridge Summer School -->
-            <div class="award-card" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="award-card" >
                 <i class="fas fa-graduation-cap"></i>
                 <div>
                     <h4>
@@ -650,7 +671,7 @@
             </div>
 
             <!-- DeepLearn -->
-            <div class="award-card" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="award-card" >
                 <i class="fas fa-brain"></i>
                 <div>
                     <h4>
@@ -676,7 +697,7 @@
         <div class="awards-grid">
 
             <!-- Cambridge Scholarship -->
-            <div class="award-card" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="award-card" >
                 <i class="fas fa-award"></i>
                 <div>
                     <h4>
@@ -692,7 +713,7 @@
             </div>
 
             <!-- LeadTheFuture -->
-            <div class="award-card" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="award-card" >
                 <i class="fas fa-user-friends"></i>
                 <div>
                     <h4>LeadTheFuture STEM Mentorship (2022–2025)</h4>
@@ -704,7 +725,7 @@
             </div>
 
             <!-- NASA 2018 -->
-            <div class="award-card" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="award-card" >
                 <i class="fas fa-trophy"></i>
                 <div>
                     <h4>2<sup>nd</sup> Place — NASA Space Apps Challenge 2018</h4>
@@ -716,7 +737,7 @@
             </div>
 
             <!-- NASA 2017 -->
-            <div class="award-card" onclick="this.querySelector('.details').style.display=(this.querySelector('.details').style.display==='block')?'none':'block';">
+            <div class="award-card" >
                 <i class="fas fa-trophy"></i>
                 <div>
                     <h4>2<sup>nd</sup> Place — NASA Space Apps Challenge 2017</h4>
@@ -806,22 +827,36 @@
 </section>
 
 <script>
-    // Scroll spy + reveal
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            if(window.scrollY >= section.offsetTop - 150) current = section.getAttribute('id');
+    document.addEventListener('DOMContentLoaded', () => {
+        // Rimuove display:none inline per permettere l’animazione
+        document.querySelectorAll('.details').forEach(d => {
+            d.style.display = 'block';
         });
-        navLinks.forEach(a => a.classList.remove('active'));
-        document.querySelector(`nav a[href="#${current}"]`)?.classList.add('active');
 
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            if(item.getBoundingClientRect().top < window.innerHeight - 100) item.classList.add('visible');
+        // Scroll spy + reveal (lascia invariato)
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                if (window.scrollY >= section.offsetTop - 150)
+                    current = section.getAttribute('id');
+            });
+
+            navLinks.forEach(a => a.classList.remove('active'));
+            document.querySelector(`nav a[href="#${current}"]`)?.classList.add('active');
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                if (item.getBoundingClientRect().top < window.innerHeight - 100)
+                    item.classList.add('visible');
+            });
         });
     });
 </script>
+
+
+
 
 </body>
 </html>
