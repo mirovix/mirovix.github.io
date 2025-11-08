@@ -247,6 +247,42 @@
             transform: translateY(0);
         }
 
+        /* --- Publications media styling --- */
+        .pub-media {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .pub-media:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .pub-video {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        /* Ensure smooth reveal of media */
+        .details img,
+        .details video {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .project:hover .details img,
+        .project:hover .details video,
+        .timeline-item .content:hover .details img,
+        .timeline-item .content:hover .details video {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
 
     </style>
 </head>
@@ -699,15 +735,30 @@
 <section id="awards" class="container">
     <h2 class="section-title">Awards & Scholarships</h2>
     <div class="box">
-        <div class="awards-grid">
-
+            <div class="awards-grid">
+                <!-- Exoplanet Search Challenge -->
+                <div class="award-card">
+                    <i class="fas fa-rocket"></i>
+                    <div>
+                        <h4>
+                            <a href="https://github.com/ML4SCI/DeepLearnHackathon/tree/main/ExoplanetSearchChallenge" style="text-decoration: underline;">
+                                3<sup>rd</sup> Place — Exoplanet Search Machine Learning Challenge 2025
+                            </a>
+                        </h4>
+                        <p>Porto</p>
+                        <div class="details" style="display:none;">
+                            <p>Objective: determine whether a protoplanetary disk image contains a planet.</p>
+                            <p>Solution: trained a deep learning model on simulated disk images to recognize structural signatures caused by an embedded planet.</p>
+                        </div>
+                    </div>
+            </div>
             <!-- Cambridge Scholarship -->
             <div class="award-card" >
                 <i class="fas fa-award"></i>
                 <div>
                     <h4>
                         <a href="https://www.ellis.eng.cam.ac.uk/summer-school/" style="text-decoration: underline;">
-                            Cambridge Summer School Scholarship & Grant
+                            Cambridge Summer School Scholarship & Grant 2025
                         </a>
                     </h4>
                     <p>Merit-based scholarship and £300 research grant</p>
