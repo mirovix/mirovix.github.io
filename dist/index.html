@@ -372,23 +372,48 @@
 <section id="publications" class="container">
     <h2 class="section-title">Publications</h2>
     <div class="projects-list">
-
-        <!-- [1] Hybrid Kernelized Movement Primitives -->
+        <!-- [3] STL Multi-Step Footstep Planning -->
         <div class="project" onclick="this.querySelector('.details').style.display = (this.querySelector('.details').style.display === 'block') ? 'none' : 'block';">
-            <h3>Hybrid Kernelized Movement Primitives for Environment-Adaptive Gait Planning in Lower-Limb Exoskeletons.</h3>
-            <p><em>E. Trombin, M. Mihailovic, M. H. F. Moura, L. Tonin, E. Menegatti, S. Tortora</em><br>
-                <i>IEEE Transactions on Robotics</i>, In preparation, 2025</p>
+            <h3>Learning Multi-Step Footstep Planning with STL Constraints for Lower Limb Exoskeletons</h3>
+            <p><em>M. Mihailovic, E. Trombin, L. Tonin, E. Menegatti, S. Tortora</em><br>
+                <i>IEEE Robotics and Automation Letters (RA-L)</i>, Under Review, 2026</p>
             <div class="details" style="display:none;">
-                <p><strong>Abstract —</strong> Developed a hybrid control framework for lower-limb exoskeletons integrating vision-based environment perception and kernelized movement primitives (KMPs) for adaptive gait generation.
-                    The method learns a human gait patterns both in task and joint space, applying real-time linear constraints based on RGB-D perception to ensure smooth, safe, and environment-aware locomotion across multiple terrains (slopes, stairs, obstacles).
-                    Validated on a commercial exoskeleton with both simulated and real-world experiments.</p>
+                <p><strong>Abstract —</strong> Developed a learning-based multi-step footstep planner for lower-limb exoskeletons integrating Signal Temporal Logic (STL) constraints for anticipatory and safety-aware locomotion.
+                    The framework combines neural predictive control with formal safety specifications to generate coordinated multi-step trajectories in cluttered environments while ensuring obstacle avoidance and goal-reaching behaviors.
+                    Validated through extensive 2D simulations, physics-based Gazebo experiments, and real-world tests on a commercial exoskeleton.</p>
             </div>
-            <p><a href="#" target="_blank">[Not Available Yet]</a></p>
+            <p><span style="color:gray;">[Paper Not Available Yet]</span></p>
         </div>
 
-        <!-- [2] Multi-Step Planning via STL -->
+        <!-- GEGLU-Transformer -->
         <div class="project" onclick="this.querySelector('.details').style.display = (this.querySelector('.details').style.display === 'block') ? 'none' : 'block';">
-            <h3>Multi-Step Planning via Signal Temporal Logic for Lower-Limb Exoskeletons</h3>
+            <h3>GEGLU-Transformer for IMU-to-EMG Estimation with Few-Shot Adaptation</h3>
+            <p><em>M. Mihailovic, L. Tonin, S. Tortora, E. Menegatti</em><br>
+                <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>, Under Review, 2026</p>
+            <div class="details" style="display:none;">
+                <p><strong>Abstract —</strong> Developed a transformer-based framework for estimating EMG signals directly from wearable IMU data using few-shot adaptation.
+                    The proposed GEGLU-Transformer captures temporal neuromuscular dynamics and enables personalized IMU-to-EMG estimation with limited calibration data, improving robustness and adaptability for wearable robotics applications.
+                    Validated through extensive experiments across multiple subjects and motion conditions.</p>
+            </div>
+            <p><a href="https://arxiv.org/abs/2604.25670" target="_blank">[DOI]</a></p>
+        </div>
+
+        <!-- Hybrid Kernelized Movement Primitives -->
+        <div class="project" onclick="this.querySelector('.details').style.display = (this.querySelector('.details').style.display === 'block') ? 'none' : 'block';">
+            <h3>Adaptive Gait Generation for Multi-Terrain Exoskeletons via Constrained Kernelized Movement Primitives</h3>
+            <p><em>E. Trombin, M. Mihailovic, M. H. F. Moura, L. Tonin, E. Menegatti, S. Tortora</em><br>
+                <i>IEEE Systems, Man, and Cybernetics Society</i>, Under Review, 2025</p>
+            <div class="details" style="display:none;">
+                <p><strong>Abstract —</strong>Developed an adaptive gait generation framework for lower-limb exoskeletons based on vision-guided Kernelized Movement Primitives.
+                    The approach learns human gait patterns in joint and task space and adapts trajectories in real time using RGB-D environmental perception for safe locomotion across stairs, slopes, and obstacles.
+                    Validated in simulation and on a commercial exoskeleton through real-world experiments.</p>
+            </div>
+            <p><a href="https://arxiv.org/abs/2605.02513" target="_blank">[DOI]</a></p>
+        </div>
+
+        <!-- Multi-Step Planning via STL -->
+        <div class="project" onclick="this.querySelector('.details').style.display = (this.querySelector('.details').style.display === 'block') ? 'none' : 'block';">
+            <h3>Abstract: Multi-Step Planning via Signal Temporal Logic for Lower-Limb Exoskeletons</h3>
             <p><em>M. Mihailovic, D. Meli, A. Farinelli, S. Tortora</em><br>
                 <i>7th Italian Conference on Robotics and Intelligent Machines</i>, Rome, 2025</p>
             <div class="details" style="display:none;">
@@ -398,9 +423,9 @@
             <p><a href="https://github.com/mirovix/ProjectsPapers/blob/main/Papers/WIP%20-%20Multi-Step%20Planning%20via%20Signal%20Temporal%20Logic%20for%20Lower%20Limb%20Exoskeletons.pdf" target="_blank">[Preprint]</a></p>
         </div>
 
-        <!-- [3] Egocentric Vision Module -->
+        <!-- Egocentric Vision Module -->
         <div class="project" onclick="this.querySelector('.details').style.display = (this.querySelector('.details').style.display === 'block') ? 'none' : 'block';">
-            <h3>Egocentric Vision Module for Adaptive Gait Planning in Lower-Limb Exoskeletons</h3>
+            <h3>Abstract: Egocentric Vision Module for Adaptive Gait Planning in Lower-Limb Exoskeletons</h3>
             <p><em>M. Mihailovic, M. Terreran, S. Ghidoni, A. Pretto, L. Tonin, E. Menegatti, S. Tortora</em><br>
                 <i>7th Italian Conference on Robotics and Intelligent Machines</i>, Rome, 2025</p>
             <div class="details" style="display:none;">
@@ -410,7 +435,7 @@
             <p><a href="https://github.com/mirovix/ProjectsPapers/blob/main/Papers/WIP%20-%20Egocentric%20Vision%20Module%20for%20Adaptive%20Gait%20Planning%20in%20Lower-Limb%20Exoskeletons.pdf" target="_blank">[Preprint]</a></p>
         </div>
 
-        <!-- [4] ERMES Springer -->
+        <!-- ERMES Springer -->
         <div class="project" onclick="this.querySelector('.details').style.display = (this.querySelector('.details').style.display === 'block') ? 'none' : 'block';">
             <h3>Autonomous Docking Manoeuvre Testing in the Framework of the ERMES Experiment.</h3>
             <p><em>A. Bortotto, G. Degli Agli, N. Pozzato, M. Dignani, F. Favotto, F. Mattiazzi, M. Mihailovic, et al.</em><br>
@@ -580,7 +605,7 @@
 
         <div class="timeline-item left">
             <div class="content" >
-                <div class="date" style="font-weight:700; color:#555;">11/2024 - Present</div>
+                <div class="date" style="font-weight:700; color:#555;">11/2024 - 12/2025</div>
                 <h3>ML Researcher</h3>
                 <h3>Nordest Technology</h3>
                 <div class="details">
@@ -828,6 +853,7 @@
         <div class="skills-category">
             <h3 class="subheading">Main Tools</h3>
             <ul class="skills-list">
+                <li><i class="devicon-pytorch-plain-wordmark"></i></li>
                 <li><i class="devicon-tensorflow-original-wordmark"></i></li>
                 <li><i class="devicon-ros-original-wordmark"></i></li>
                 <li><i class="devicon-scikitlearn-plain"></i></li>
