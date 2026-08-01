@@ -14,9 +14,10 @@
             'https://www.mvrdv.com/careers',
             'https://www.snohetta.com/careers',
             'https://www.herzogdemeuron.com/index/careers.html',
-            'https://www.unstudio.com/en/page/13948/careers'
+            'https://www.unstudio.com/en/page/13948/careers',
+            'https://www.kiasm.studio/jobs'
         ].join('\n'),
-        keywords: 'architectural visualizer, architectural visualiser, 3d visualizer, 3d visualiser, visualization artist, visualisation artist, archviz, rendering artist, cgi artist, unreal, enscape, v-ray, corona, architect',
+        keywords: 'architectural visualizer, architectural visualiser, 3d visualizer, 3d visualiser, 3d artist, junior 3d artist, intern 3d artist, cg artist, cgi artist, visualization artist, visualisation artist, visual artist, archviz, rendering artist, render artist, unreal, enscape, v-ray, vray, corona, 3ds max, architect, architecture',
         negativeKeywords: 'finance, accountant, marketing, business development, hr, human resources, office manager, project manager construction',
         crawlDepth: 1,
         maxPages: 28,
@@ -44,9 +45,13 @@
             'MAD Architects',
             'Diller Scofidio + Renfro',
             'Perkins&Will',
-            'HOK'
+            'HOK',
+            'Kiasm',
+            'KIASM'
         ].join('\n')
     };
+
+    const roleTitlePattern = /(?:senior|junior|intern|graduate|lead|middleweight|architectural|architecture|3d|cg|cgi|visuali[sz](?:er|ation)|render(?:ing)?|unreal|artist|designer|architect|generalist|post-production|motion|animation|creative)\s+(?:[a-z0-9/+&.-]+\s+){0,5}(?:artist|visuali[sz]er|designer|architect|generalist|intern|specialist|assistant)|(?:intern|junior|senior)\s+3d\s+artist|3d\s+artist/gi;
 
     const classicQueries = [
         'architectural visualizer visualiser jobs top architecture studio Dezeen',
@@ -303,14 +308,14 @@
         const locations = splitTokens(state.settings.locations);
         const lower = cleanText.toLowerCase();
 
-        if (!keywords.some(term => lower.includes(term.toLowerCase()))) return;
+        if (!keywords.some(term => lower.includes(term.toLowerCase())) && !hasRoleTitle(cleanText)) return;
 
         const chunks = makeChunks(cleanText, keywords);
         chunks.forEach(chunk => {
             const score = scoreChunk(chunk, keywords, negatives, topStudios, locations, url);
             if (score < state.settings.minScore) return;
             if (!looksLikeOpenRole(chunk, url)) return;
-            if (state.settings.onlyTopStudio && !isTopStudio(chunk, topStudios, url) && score < state.settings.minScore + 4) return;
+            if (state.settings.onlyTopStudio && type !== 'Studio target' && !isTopStudio(chunk, topStudios, url) && score < state.settings.minScore + 4) return;
 
             const resultUrl = inferBestUrl(chunk, url);
             const title = inferTitle(chunk, url, resultUrl);
@@ -361,13 +366,14 @@
         let score = 0;
         keywords.forEach(term => { if (lower.includes(term.toLowerCase())) score += term.length > 9 ? 3 : 2; });
         locations.forEach(term => { if (lower.includes(term.toLowerCase())) score += 1; });
+        if (hasRoleTitle(chunk)) score += 6;
         topStudios.forEach(studio => {
             if (lower.includes(studio.toLowerCase()) || url.toLowerCase().includes(slug(studio))) score += 4;
         });
-        ['apply', 'career', 'careers', 'job', 'jobs', 'position', 'vacancy', 'join us', 'full-time', 'part-time', 'hybrid', 'remote'].forEach(term => {
+        ['apply', 'career', 'careers', 'job', 'jobs', 'position', 'vacancy', 'join us', 'full-time', 'part-time', 'hybrid', 'remote', 'portfolio', 'cv'].forEach(term => {
             if (lower.includes(term)) score += 1;
         });
-        ['hiring', 'seeking', 'is looking for', 'salary', 'posted', 'deadline'].forEach(term => {
+        ['hiring', 'we are hiring', 'seeking', 'on the lookout', 'is looking for', 'salary', 'posted', 'deadline', 'how to apply'].forEach(term => {
             if (lower.includes(term)) score += 2;
         });
         ['no current vacancies', 'no open positions', 'currently no vacancies', 'unsolicited application', 'search all jobs by company', 'click here to post a job', 'subscribe to our newsletters', 'companies:', 'job alert'].forEach(term => {
@@ -379,12 +385,28 @@
 
     function makeChunks(text, keywords) {
         const lines = text.split(/\n+/).map(line => line.trim()).filter(Boolean);
+        const roleIndexes = lines
+            .map((line, index) => ({ line, index, title: findRoleTitle(line) }))
+            .filter(item => item.title);
+
+        if (roleIndexes.length) {
+            return roleIndexes.map((item, roleIndex) => {
+                const nextRole = roleIndexes[roleIndex + 1];
+                const introStart = roleIndex === 0 ? Math.max(0, item.index - 8) : item.index;
+                const end = nextRole ? nextRole.index : Math.min(lines.length, item.index + 24);
+                return lines.slice(introStart, end).join(' ');
+            });
+        }
+
         const chunks = [];
         lines.forEach((line, index) => {
             const lower = line.toLowerCase();
-            if (!keywords.some(term => lower.includes(term.toLowerCase()))) return;
-            const start = Math.max(0, index - 3);
-            const end = Math.min(lines.length, index + 5);
+            const keywordHit = keywords.some(term => lower.includes(term.toLowerCase()));
+            const roleHit = hasRoleTitle(line);
+            const hiringHit = /we are hiring|hiring|how to apply|send(?:ing)? your cv|portfolio|salary|allowance|eligible to work|based in/i.test(line);
+            if (!keywordHit && !roleHit && !hiringHit) return;
+            const start = Math.max(0, index - (roleHit ? 4 : 3));
+            const end = Math.min(lines.length, index + (roleHit ? 16 : 7));
             chunks.push(lines.slice(start, end).join(' '));
         });
         if (!chunks.length && text.length < 5000) chunks.push(text);
@@ -469,7 +491,8 @@
 
     function inferTitle(chunk, url, resultUrl) {
         const lines = chunk.split(/[.!?]\s|\n/).map(line => line.trim()).filter(Boolean);
-        const jobLine = lines.find(line => /hiring|seeking|looking for|visual|render|archviz|3d|architect/i.test(line) && !/subscribe|companies:|search all jobs|job category:|search results:/i.test(line)) || lines[0] || url;
+        const explicitRole = findStandaloneRoleTitle(lines) || findRoleTitle(chunk);
+        const jobLine = explicitRole || lines.find(line => /hiring|seeking|looking for|on the lookout|visual|render|archviz|3d|artist|architect/i.test(line) && !/subscribe|companies:|search all jobs|job category:|search results:/i.test(line)) || lines[0] || url;
         const title = jobLine.replace(/\s+/g, ' ').slice(0, 120);
         if (/^\[?(more|read more|view job)\]?/i.test(title)) {
             return titleFromUrl(resultUrl) || title;
@@ -536,12 +559,38 @@
     function looksLikeOpenRole(text, url) {
         const lower = (text + ' ' + url).toLowerCase();
         const roleSignal = /apply|hiring|seeking|looking for|vacanc|position|role|job|career|salary|full-time|part-time|hybrid|remote|posted/.test(lower);
+        const boutiqueStudioSignal = /we are hiring|on the lookout|how to apply|send(?:ing)? your cv|portfolio|eligible to work|based in|allowance|competitive salary/.test(lower);
         const boilerplate = /search all jobs by company|subscribe to our newsletters|click here to post a job|job alert|companies:/.test(lower);
         const linkCount = (text.match(/https?:\/\/|\]\(/g) || []).length;
         const companyListLinks = (text.match(/\* \[[^\]]+\]\(/g) || []).length;
         const strongHiringSignal = /is hiring|is seeking|is looking|apply now|posted|deadline|full-time|part-time/.test(lower);
         if (!strongHiringSignal && /search results:|job category:|job categories|browse jobs/.test(lower)) return false;
-        return roleSignal && !boilerplate && (linkCount < 3 || strongHiringSignal) && (companyListLinks < 2 || strongHiringSignal);
+        return (roleSignal || boutiqueStudioSignal || hasRoleTitle(text)) && !boilerplate && (linkCount < 3 || strongHiringSignal || boutiqueStudioSignal) && (companyListLinks < 2 || strongHiringSignal || boutiqueStudioSignal);
+    }
+
+    function hasRoleTitle(text) {
+        roleTitlePattern.lastIndex = 0;
+        return roleTitlePattern.test(text);
+    }
+
+    function findRoleTitle(text) {
+        roleTitlePattern.lastIndex = 0;
+        const matches = Array.from(String(text || '').matchAll(roleTitlePattern))
+            .map(match => match[0].replace(/\s+/g, ' ').trim())
+            .filter(title => title.length >= 8 && title.length <= 90)
+            .filter(title => !/architectural visualization studio|many different types|similar context/i.test(title));
+        return matches[0] || '';
+    }
+
+    function findStandaloneRoleTitle(lines) {
+        for (const line of lines) {
+            const cleaned = line.replace(/^[\\s*-]+/, '').replace(/[.:]+$/, '').trim();
+            const title = findRoleTitle(cleaned);
+            if (title && cleaned.length <= 70 && cleaned.toLowerCase().includes(title.toLowerCase())) {
+                return title;
+            }
+        }
+        return '';
     }
 
     function stripText(text) {
