@@ -254,6 +254,7 @@
             const fetched = await fetchText(item.url);
             if (!fetched.text) {
                 logSource('Saltato: non leggibile dal browser/proxy.');
+                addFallbackResult(item.url, item.type);
                 continue;
             }
 
@@ -328,6 +329,27 @@
                 snippet: chunk.slice(0, 520),
                 tags: matchedTerms(chunk, keywords.concat(locations, topStudios)).slice(0, 8)
             });
+        });
+
+        state.results.sort((a, b) => b.score - a.score);
+        renderResults();
+    }
+
+    function addFallbackResult(url, type) {
+        const company = sourceName(url);
+        const id = ('fallback-' + url).toLowerCase();
+        if (state.results.some(result => result.id === id)) return;
+
+        state.results.push({
+            id,
+            title: 'Verifica manuale live: ' + company,
+            url: buildOfficialSearchUrl(url),
+            sourceUrl: url,
+            company,
+            sourceType: type + ' / fallback',
+            score: Math.max(state.settings.minScore, 5),
+            snippet: 'Questa fonte ha bloccato la lettura automatica dal browser. Apri il link: porta alla pagina ufficiale o a una ricerca mirata per visualizer, 3D artist e architect presso top studio.',
+            tags: ['fallback', 'official search', 'visualizer']
         });
 
         state.results.sort((a, b) => b.score - a.score);
@@ -463,6 +485,35 @@
             return new URL(url).hostname.replace(/^www\./, '');
         } catch (error) {
             return 'Fonte esterna';
+        }
+    }
+
+    function sourceName(url) {
+        try {
+            const parsed = new URL(url);
+            if (parsed.hostname === 's.jina.ai') return 'Ricerca job board';
+            return parsed.hostname.replace(/^www\./, '');
+        } catch (error) {
+            return 'Fonte esterna';
+        }
+    }
+
+    function buildOfficialSearchUrl(url) {
+        try {
+            const parsed = new URL(url);
+            if (parsed.hostname === 's.jina.ai') {
+                const query = decodeURIComponent(parsed.pathname.replace(/^\//, ''));
+                return 'https://www.google.com/search?q=' + encodeURIComponent(query);
+            }
+            const host = parsed.hostname.replace(/^www\./, '');
+            const query = [
+                'site:' + host,
+                '(visualizer OR visualiser OR visualization OR visualisation OR "3d artist" OR architect)',
+                '(job OR jobs OR careers OR vacancy OR hiring OR position)'
+            ].join(' ');
+            return 'https://www.google.com/search?q=' + encodeURIComponent(query);
+        } catch (error) {
+            return url;
         }
     }
 
