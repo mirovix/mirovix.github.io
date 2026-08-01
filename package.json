@@ -9,6 +9,7 @@
         "build:scripts": "node scripts/build-scripts.js",
         "build:scss": "node scripts/build-scss.js",
         "clean": "node scripts/clean.js",
+        "cv": "node scripts/generate-cv.js",
         "serve:logger": "node scripts/local-logger-server.js",
         "start": "npm run build && node scripts/start.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
@@ -44,6 +45,7 @@
         "browser-sync": "2.27.9",
         "chokidar": "3.5.3",
         "concurrently": "6.3.0",
+        "pdfkit": "^0.12.3",
         "postcss": "8.4.12",
         "prettier": "2.6.0",
         "pug": "3.0.2",

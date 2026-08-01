@@ -1,0 +1,141 @@
+doctype html
+html(lang='it')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        meta(name='robots', content='noindex, nofollow')
+        title Neve - Studio Visualizer Search
+        link(rel='icon', type='image/x-icon', href='assets/img/favicon.ico')
+        script(src='https://use.fontawesome.com/releases/v6.1.0/js/all.js', crossorigin='anonymous')
+        link(href='https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800', rel='stylesheet', type='text/css')
+        link(href='css/styles.css', rel='stylesheet')
+    body.neve-page
+        main.neve-shell
+            section#neveLock.neve-lock(aria-labelledby='lockTitle')
+                .neve-lock-panel
+                    p.neve-kicker Area protetta
+                    h1#lockTitle Neve
+                    p Inserisci il codice per aprire il cercatore di posizioni Architetto / Visualizer.
+                    form#neveLockForm.neve-lock-form
+                        label(for='nevePassword') Codice
+                        .neve-password-row
+                            input#nevePassword(type='password', autocomplete='current-password', placeholder='Codice di accesso')
+                            button.neve-icon-button(type='button', data-toggle-password, aria-label='Mostra codice')
+                                i.fa-solid.fa-eye
+                        button.neve-primary(type='submit')
+                            i.fa-solid.fa-lock-open
+                            span Entra
+                    p#neveLockError.neve-error(role='alert')
+
+            section#neveApp.neve-app(hidden)
+                header.neve-topbar
+                    .neve-title-block
+                        p.neve-kicker Top studio only
+                        h1 Neve
+                        p Trova posizioni aperte da Architetto Visualizer, 3D Artist e Visualiser su studi selezionati e job board specializzati.
+                    .neve-actions
+                        button#saveSettings.neve-secondary(type='button')
+                            i.fa-solid.fa-floppy-disk
+                            span Salva
+                        button#exportResults.neve-secondary(type='button')
+                            i.fa-solid.fa-file-export
+                            span Esporta
+                        button#runSearch.neve-primary.neve-search-button(type='button')
+                            i.fa-solid.fa-magnifying-glass-location
+                            span Cerca ora
+
+                .neve-status-strip
+                    .neve-stat
+                        span#sourcesCount 0
+                        small fonti
+                    .neve-stat
+                        span#matchesCount 0
+                        small risultati
+                    .neve-stat
+                        span#lastRunStatus Mai
+                        small ultima ricerca
+                    .neve-stat
+                        span#searchState Pronto
+                        small stato
+
+                .neve-grid
+                    aside.neve-panel.neve-config
+                        .neve-panel-head
+                            h2 Configurazione
+                            button#resetSettings.neve-text-button(type='button') Reset
+
+                        label.neve-field
+                            span Link studi
+                            textarea#studioLinks(rows='9', spellcheck='false')
+                        .neve-hint Un link per riga. Inserisci home, careers, jobs o work-with-us degli studi.
+
+                        label.neve-field
+                            span Parole chiave
+                            input#keywords(type='text')
+
+                        label.neve-field
+                            span Parole da escludere
+                            input#negativeKeywords(type='text')
+
+                        .neve-two
+                            label.neve-field
+                                span Profondita
+                                input#crawlDepth(type='number', min='0', max='2', step='1')
+                            label.neve-field
+                                span Max pagine
+                                input#maxPages(type='number', min='5', max='80', step='1')
+
+                        .neve-two
+                            label.neve-field
+                                span Localita
+                                input#locations(type='text')
+                            label.neve-field
+                                span Score minimo
+                                input#minScore(type='number', min='1', max='30', step='1')
+
+                        .neve-toggles
+                            label.neve-check
+                                input#includeClassic(type='checkbox')
+                                span Includi job board classici
+                            label.neve-check
+                                input#onlyTopStudio(type='checkbox')
+                                span Priorita top studio
+                            label.neve-check
+                                input#useReaderProxy(type='checkbox')
+                                span Usa reader/proxy anti-CORS
+
+                        label.neve-field
+                            span Top studio target
+                            textarea#topStudios(rows='7', spellcheck='false')
+
+                    section.neve-panel.neve-results-wrap
+                        .neve-panel-head
+                            div
+                                h2 Risultati
+                                p#progressText Scansione non ancora avviata.
+                            .neve-filter
+                                i.fa-solid.fa-filter
+                                input#resultFilter(type='search', placeholder='Filtra risultati')
+
+                        #sourceLog.neve-log(aria-live='polite')
+                        #results.neve-results
+                            .neve-empty
+                                i.fa-solid.fa-mountain-sun
+                                p Premi il bottone arancione per lanciare la ricerca in tempo reale.
+
+                template#resultTemplate
+                    article.neve-result
+                        .neve-result-main
+                            .neve-result-meta
+                                span.neve-pill(data-role='score')
+                                span(data-role='company')
+                                span(data-role='sourceType')
+                            h3(data-role='title')
+                            p(data-role='snippet')
+                            .neve-tags(data-role='tags')
+                        a.neve-open-link(data-role='url', target='_blank', rel='noopener noreferrer')
+                            i.fa-solid.fa-arrow-up-right-from-square
+                            span Apri
+
+        script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js')
+        script(src='js/neve.js')
