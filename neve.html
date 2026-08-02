@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Neve - Studio Visualizer Search</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="neve-page">
+        <main class="neve-shell">
+            <section class="neve-lock" id="neveLock" aria-labelledby="lockTitle">
+                <div class="neve-lock-panel">
+                    <p class="neve-kicker">Area protetta</p>
+                    <h1 id="lockTitle">Neve</h1>
+                    <p>Inserisci il codice per aprire il cercatore di posizioni Architetto / Visualizer.</p>
+                    <form class="neve-lock-form" id="neveLockForm">
+                        <label for="nevePassword">Codice</label>
+                        <div class="neve-password-row">
+                            <input id="nevePassword" type="password" autocomplete="current-password" placeholder="Codice di accesso" />
+                            <button class="neve-icon-button" type="button" data-toggle-password aria-label="Mostra codice"><i class="fa-solid fa-eye"></i></button>
+                        </div>
+                        <button class="neve-primary" type="submit">
+                            <i class="fa-solid fa-lock-open"></i>
+                            <span>Entra</span>
+                        </button>
+                    </form>
+                    <p class="neve-error" id="neveLockError" role="alert"></p>
+                </div>
+            </section>
+            <section class="neve-app" id="neveApp" hidden>
+                <header class="neve-topbar">
+                    <div class="neve-title-block">
+                        <p class="neve-kicker">Top studio only</p>
+                        <h1>Neve</h1>
+                        <p>Trova posizioni aperte da Architetto Visualizer, 3D Artist e Visualiser su studi selezionati e job board specializzati, con link ufficiali pronti quando un sito blocca lo scraping.</p>
+                    </div>
+                    <div class="neve-actions">
+                        <button class="neve-secondary" id="saveSettings" type="button">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            <span>Salva</span>
+                        </button>
+                        <button class="neve-secondary" id="exportResults" type="button">
+                            <i class="fa-solid fa-file-export"></i>
+                            <span>Esporta</span>
+                        </button>
+                        <button class="neve-primary neve-search-button" id="runSearch" type="button">
+                            <i class="fa-solid fa-magnifying-glass-location"></i>
+                            <span>Cerca ora</span>
+                        </button>
+                    </div>
+                </header>
+                <div class="neve-status-strip">
+                    <div class="neve-stat">
+                        <span id="sourcesCount">0</span>
+                        <small>fonti</small>
+                    </div>
+                    <div class="neve-stat">
+                        <span id="matchesCount">0</span>
+                        <small>risultati</small>
+                    </div>
+                    <div class="neve-stat">
+                        <span id="lastRunStatus">Mai</span>
+                        <small>ultima ricerca</small>
+                    </div>
+                    <div class="neve-stat">
+                        <span id="searchState">Pronto</span>
+                        <small>stato</small>
+                    </div>
+                </div>
+                <div class="neve-grid">
+                    <aside class="neve-panel neve-config">
+                        <div class="neve-panel-head">
+                            <h2>Configurazione</h2>
+                            <button class="neve-text-button" id="resetSettings" type="button">Reset</button>
+                        </div>
+                        <label class="neve-field">
+                            <span>Link studi</span>
+                            <textarea id="studioLinks" rows="9" spellcheck="false"></textarea>
+                        </label>
+                        <div class="neve-hint">Un link per riga. Inserisci home, careers, jobs o work-with-us degli studi.</div>
+                        <label class="neve-field">
+                            <span>Parole chiave</span>
+                            <input id="keywords" type="text" />
+                        </label>
+                        <label class="neve-field">
+                            <span>Parole da escludere</span>
+                            <input id="negativeKeywords" type="text" />
+                        </label>
+                        <div class="neve-two">
+                            <label class="neve-field">
+                                <span>Profondita</span>
+                                <input id="crawlDepth" type="number" min="0" max="2" step="1" />
+                            </label>
+                            <label class="neve-field">
+                                <span>Max pagine</span>
+                                <input id="maxPages" type="number" min="5" max="80" step="1" />
+                            </label>
+                        </div>
+                        <div class="neve-two">
+                            <label class="neve-field">
+                                <span>Localita</span>
+                                <input id="locations" type="text" />
+                            </label>
+                            <label class="neve-field">
+                                <span>Score minimo</span>
+                                <input id="minScore" type="number" min="1" max="30" step="1" />
+                            </label>
+                        </div>
+                        <div class="neve-toggles">
+                            <label class="neve-check">
+                                <input id="includeClassic" type="checkbox" />
+                                <span>Includi job board classici</span>
+                            </label>
+                            <label class="neve-check">
+                                <input id="onlyTopStudio" type="checkbox" />
+                                <span>Priorita top studio</span>
+                            </label>
+                            <label class="neve-check">
+                                <input id="useReaderProxy" type="checkbox" />
+                                <span>Usa reader/proxy anti-CORS</span>
+                            </label>
+                        </div>
+                        <label class="neve-field">
+                            <span>Top studio target</span>
+                            <textarea id="topStudios" rows="7" spellcheck="false"></textarea>
+                        </label>
+                    </aside>
+                    <section class="neve-panel neve-results-wrap">
+                        <div class="neve-panel-head">
+                            <div>
+                                <h2>Risultati</h2>
+                                <p id="progressText">Scansione non ancora avviata.</p>
+                            </div>
+                            <div class="neve-filter">
+                                <i class="fa-solid fa-filter"></i>
+                                <input id="resultFilter" type="search" placeholder="Filtra risultati" />
+                            </div>
+                        </div>
+                        <div class="neve-log" id="sourceLog" aria-live="polite"></div>
+                        <div class="neve-results" id="results">
+                            <div class="neve-empty">
+                                <i class="fa-solid fa-mountain-sun"></i>
+                                <p>Premi il bottone arancione per lanciare la ricerca in tempo reale.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <template id="resultTemplate">
+                    <article class="neve-result">
+                        <div class="neve-result-main">
+                            <div class="neve-result-meta">
+                                <span class="neve-pill" data-role="score"></span>
+                                <span data-role="company"></span>
+                                <span data-role="sourceType"></span>
+                            </div>
+                            <h3 data-role="title"></h3>
+                            <p data-role="snippet"></p>
+                            <div class="neve-tags" data-role="tags"></div>
+                        </div>
+                        <a class="neve-open-link" data-role="url" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <span>Apri</span>
+                        </a>
+                    </article>
+                </template>
+            </section>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/neve.js"></script>
+    </body>
+</html>

@@ -3,7 +3,7 @@
     "name": "startbootstrap-resume",
     "version": "7.0.5",
     "scripts": {
-        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets",
+        "build": "npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run sync:root",
         "build:assets": "node scripts/build-assets.js",
         "build:pug": "node scripts/build-pug.js",
         "build:scripts": "node scripts/build-scripts.js",
@@ -11,6 +11,7 @@
         "clean": "node scripts/clean.js",
         "cv": "node scripts/generate-cv.js",
         "serve:logger": "node scripts/local-logger-server.js",
+        "sync:root": "node scripts/sync-root.js",
         "start": "npm run build && node scripts/start.js",
         "start:debug": "npm run build && node scripts/start-debug.js"
     },

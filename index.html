@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miroljub Mihailovic | Robotics and AI PhD Candidate</title>
+    <meta name="description" content="Miroljub Mihailovic is a PhD Candidate in Robotics and AI at the University of Padua, researching lower-limb exoskeletons, motion planning, perception, and machine learning.">
+    <meta name="author" content="Miroljub Mihailovic">
+    <meta name="keywords" content="Miroljub Mihailovic, robotics, artificial intelligence, AI, exoskeletons, lower-limb exoskeletons, machine learning, motion planning, University of Padua, PhD">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#f5f7fb">
+    <link rel="canonical" href="https://mirovix.github.io/">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Miroljub Mihailovic | Robotics and AI PhD Candidate">
+    <meta property="og:description" content="Research portfolio of Miroljub Mihailovic: robotics, AI, lower-limb exoskeletons, perception, motion planning, publications, and projects.">
+    <meta property="og:url" content="https://mirovix.github.io/">
+    <meta property="og:image" content="https://mirovix.github.io/assets/img/profile.jpg">
+    <meta property="og:site_name" content="Miroljub Mihailovic">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Miroljub Mihailovic | Robotics and AI PhD Candidate">
+    <meta name="twitter:description" content="Robotics and AI research portfolio focused on exoskeletons, machine learning, perception, and motion planning.">
+    <meta name="twitter:image" content="https://mirovix.github.io/assets/img/profile.jpg">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Miroljub Mihailovic",
+            "url": "https://mirovix.github.io/",
+            "image": "https://mirovix.github.io/assets/img/profile.jpg",
+            "jobTitle": "PhD Candidate in Robotics and AI",
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "University of Padua"
+            },
+            "knowsAbout": [
+                "Robotics",
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Lower-limb exoskeletons",
+                "Motion planning",
+                "Perception"
+            ],
+            "sameAs": [
+                "https://www.linkedin.com/in/miromiha/",
+                "https://github.com/mirovix",
+                "https://scholar.google.com/citations?user=mY9-J9kAAAAJ&hl=en"
+            ]
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #f4f6f1;
+            --surface: #ffffff;
+            --surface-soft: #edf4f2;
+            --surface-ink: #111827;
+            --text: #151a23;
+            --muted: #647181;
+            --line: rgba(21, 26, 35, 0.12);
+            --accent: #087f7a;
+            --accent-strong: #064b52;
+            --warm: #d47b2b;
+            --violet: #6d5dfc;
+            --rose: #c8465d;
+            --shadow: 0 24px 70px rgba(17, 24, 39, 0.14);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            position: relative;
+            margin: 0;
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background:
+                linear-gradient(135deg, rgba(8, 127, 122, 0.14), transparent 32%),
+                linear-gradient(225deg, rgba(212, 123, 43, 0.12), transparent 30%),
+                linear-gradient(180deg, #fbfcf7 0%, var(--bg) 48%, #eef3f6 100%);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(17, 24, 39, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(17, 24, 39, 0.045) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.78), transparent 82%);
+        }
+
+        ::selection {
+            background: rgba(8, 127, 122, 0.18);
+        }
+
+        body.nav-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: var(--accent-strong);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        section {
+            scroll-margin-top: 96px;
+            padding: 76px 20px;
+        }
+
+        .container {
+            width: min(1120px, 100%);
+            margin: 0 auto;
+        }
+
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            padding: 12px 0;
+            background: transparent;
+        }
+
+        .nav-inner {
+            width: min(1120px, calc(100% - 40px));
+            min-height: 58px;
+            margin: 0 auto;
+            padding: 0 12px 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.58);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.74);
+            box-shadow: 0 14px 36px rgba(17, 24, 39, 0.08);
+            backdrop-filter: blur(18px);
+        }
+
+        .brand {
+            color: var(--text);
+            font-size: 0.98rem;
+            font-weight: 800;
+            letter-spacing: 0;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--warm));
+            box-shadow: 0 0 0 6px rgba(8, 127, 122, 0.10);
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            border-radius: 999px;
+            padding: 8px 10px;
+            font-size: 0.9rem;
+            line-height: 1.1;
+        }
+
+        .nav-links a.active {
+            background: #101820;
+            color: var(--accent-strong);
+            color: #ffffff;
+        }
+
+        .hero {
+            min-height: calc(100svh - 68px);
+            display: grid;
+            align-items: center;
+            padding-top: 30px;
+            padding-bottom: 56px;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 0.5fr 1.5fr;
+            gap: clamp(28px, 5vw, 68px);
+            align-items: center;
+            position: relative;
+        }
+
+        .portrait-wrap {
+            position: relative;
+            width: min(180px, 42vw);
+            aspect-ratio: 1;
+            justify-self: center;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #dfe7e4;
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            box-shadow: 0 22px 55px rgba(17, 24, 39, 0.16);
+            transform: rotate(-1deg);
+        }
+
+        .portrait-wrap::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.30), transparent 38%),
+                linear-gradient(315deg, rgba(8, 127, 122, 0.22), transparent 34%);
+            mix-blend-mode: screen;
+            opacity: 0.66;
+            pointer-events: none;
+        }
+
+        .portrait-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-kicker,
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--accent);
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            overflow-wrap: anywhere;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.6rem, 7vw, 5.7rem);
+            line-height: 0.95;
+            letter-spacing: 0;
+            color: #111827;
+        }
+
+        .hero-summary {
+            margin: 22px 0 0;
+            color: var(--muted);
+            font-size: clamp(1rem, 2vw, 1.18rem);
+            max-width: 66ch;
+        }
+
+        .contact-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 22px;
+            color: var(--muted);
+            font-size: 0.96rem;
+        }
+
+        .social-links,
+        .link-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 26px;
+        }
+
+        .social-links {
+            gap: 14px;
+        }
+
+        .icon-link,
+        .pill-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 42px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.82);
+            color: var(--text);
+            padding: 9px 12px;
+            box-shadow: 0 8px 18px rgba(23, 32, 42, 0.05);
+            transition: color 0.18s ease, background 0.18s ease;
+        }
+
+        .icon-link {
+            width: 58px;
+            min-height: 58px;
+            padding: 0;
+            font-size: 1.65rem;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+
+        .section-head h2 {
+            margin: 0;
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            line-height: 1.05;
+        }
+
+        .section-note {
+            margin: 0;
+            color: var(--muted);
+            max-width: 44ch;
+            text-align: right;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .publication-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .stack {
+            display: grid;
+            gap: 18px;
+        }
+
+        .card,
+        .panel,
+        .mini-card {
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 0 16px 38px rgba(23, 32, 42, 0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            padding: clamp(20px, 3vw, 28px);
+            transition: none;
+        }
+
+        .card button {
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            text-align: left;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .meta {
+            color: var(--warm);
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .card > *,
+        .mini-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card h3,
+        .mini-card h3 {
+            margin: 8px 0 8px;
+            font-size: clamp(1.12rem, 2vw, 1.36rem);
+            line-height: 1.2;
+        }
+
+        .card p,
+        .mini-card p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            color: var(--muted);
+            transition: max-height 0.42s ease, opacity 0.28s ease, margin-top 0.28s ease;
+        }
+
+        .card.is-open .details,
+        .mini-card.is-open .details {
+            max-height: 520px;
+            opacity: 1;
+            margin-top: 14px;
+        }
+
+        .toggle-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .card.is-open .toggle-hint i,
+        .mini-card.is-open .toggle-hint i {
+            transform: rotate(180deg);
+        }
+
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 18px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 50%;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, rgba(8, 127, 122, 0.45), rgba(212, 123, 43, 0.45), transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline .card {
+            width: calc(50% - 28px);
+            position: relative;
+        }
+
+        .timeline .card:nth-child(odd) {
+            justify-self: start;
+        }
+
+        .timeline .card:nth-child(even) {
+            justify-self: end;
+        }
+
+        .timeline .card::after {
+            content: "";
+            position: absolute;
+            top: 30px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--warm));
+            box-shadow: 0 0 0 6px rgba(37, 111, 120, 0.14);
+        }
+
+        .project-card {
+            --project-accent: var(--accent);
+            min-height: 360px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            border-color: rgba(17, 24, 39, 0.10);
+            background: rgba(255, 255, 255, 0.86);
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72)),
+                linear-gradient(135deg, color-mix(in srgb, var(--project-accent) 16%, transparent), transparent);
+            transform: translateY(0) rotateX(0deg) rotateY(0deg);
+        }
+
+        .project-card .link-row {
+            margin-top: auto;
+            padding: 0 22px 22px;
+        }
+
+        .project-visual {
+            position: relative;
+            min-height: 124px;
+            padding: 22px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #ffffff;
+            background:
+                linear-gradient(135deg, var(--surface-ink), color-mix(in srgb, var(--project-accent) 58%, #111827));
+        }
+
+        .project-visual::before {
+            content: "";
+            position: absolute;
+            inset: -60% -30%;
+            background:
+                linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent),
+                repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0 1px, transparent 1px 12px);
+            transform: translateX(-32%);
+        }
+
+        .project-glyph {
+            position: relative;
+            z-index: 1;
+            width: 62px;
+            height: 62px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.13);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+        }
+
+        .project-glyph i {
+            font-size: 1.8rem;
+        }
+
+        .project-index {
+            position: relative;
+            z-index: 1;
+            font-size: 0.82rem;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            opacity: 0.72;
+        }
+
+        .project-body {
+            padding: 22px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+
+        .project-body button {
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .project-tags span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 5px 9px;
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.66);
+            color: #2a3441;
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .feature-card {
+            --feature-accent: var(--accent);
+            min-height: 265px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            border-color: rgba(17, 24, 39, 0.10);
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.74)),
+                linear-gradient(135deg, color-mix(in srgb, var(--feature-accent) 14%, transparent), transparent);
+        }
+
+        .feature-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .feature-icon {
+            width: 54px;
+            height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background:
+                linear-gradient(135deg, color-mix(in srgb, var(--feature-accent) 88%, #111827), #111827);
+            color: #ffffff;
+            box-shadow: 0 14px 28px color-mix(in srgb, var(--feature-accent) 24%, transparent);
+        }
+
+        .feature-icon i {
+            font-size: 1.35rem;
+        }
+
+        .feature-number {
+            color: rgba(17, 24, 39, 0.30);
+            font-size: 0.86rem;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+        }
+
+        .feature-meta {
+            color: var(--warm);
+            font-size: 0.82rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .feature-card .link-row {
+            margin-top: auto;
+            padding-top: 18px;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .feature-tags span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 27px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(17, 24, 39, 0.06);
+            color: #253041;
+            font-size: 0.76rem;
+            font-weight: 850;
+        }
+
+        .publication-card {
+            min-height: 340px;
+            overflow: hidden;
+        }
+
+        .publication-card::after {
+            content: "";
+            position: absolute;
+            right: -70px;
+            bottom: -70px;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background: color-mix(in srgb, var(--feature-accent) 18%, transparent);
+            filter: blur(2px);
+            pointer-events: none;
+        }
+
+
+        .achievement-board {
+            display: grid;
+            gap: 12px;
+        }
+
+        .achievement-item {
+            display: grid;
+            grid-template-columns: 82px 54px 1fr auto;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 12px 28px rgba(23, 32, 42, 0.06);
+        }
+
+        .achievement-date {
+            color: var(--warm);
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .achievement-icon {
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--feature-accent), #111827);
+            color: #ffffff;
+        }
+
+        .achievement-main h3 {
+            margin: 0 0 4px;
+            font-size: 1.05rem;
+            line-height: 1.25;
+        }
+
+        .achievement-main p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .achievement-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+            max-width: 260px;
+        }
+
+        .achievement-tags span {
+            min-height: 27px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(17, 24, 39, 0.06);
+            color: #253041;
+            font-size: 0.75rem;
+            font-weight: 850;
+        }
+
+        .personal-split {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .personal-panel {
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.78);
+            box-shadow: 0 16px 38px rgba(23, 32, 42, 0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        .personal-panel h3 {
+            margin: 0 0 18px;
+            font-size: 1.2rem;
+        }
+
+        .language-stack {
+            display: grid;
+            gap: 12px;
+        }
+
+        .language-row {
+            display: grid;
+            grid-template-columns: 48px 1fr auto;
+            gap: 12px;
+            align-items: center;
+            min-height: 70px;
+            padding: 12px;
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .language-row i,
+        .interest-token i {
+            color: var(--feature-accent);
+            font-size: 1.22rem;
+        }
+
+        .language-row strong {
+            display: block;
+            line-height: 1.1;
+        }
+
+        .language-row span {
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .level-bar {
+            width: 88px;
+            height: 7px;
+            border-radius: 999px;
+            background: rgba(17, 24, 39, 0.10);
+            overflow: hidden;
+        }
+
+        .level-bar::before {
+            content: "";
+            display: block;
+            width: var(--level, 100%);
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--feature-accent), var(--warm));
+        }
+
+        .interest-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-content: flex-start;
+        }
+
+        .interest-token {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 52px;
+            padding: 12px 14px;
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            color: var(--text);
+            font-weight: 850;
+        }
+
+        .skills-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .skill-card {
+            --feature-accent: var(--accent);
+            min-height: 280px;
+        }
+
+        .skill-card .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .skill-chip {
+            position: relative;
+            overflow: hidden;
+            justify-content: flex-start;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.70);
+        }
+
+        .timeline .card:nth-child(odd)::after {
+            right: -35px;
+        }
+
+        .timeline .card:nth-child(even)::after {
+            left: -35px;
+        }
+
+        .panel {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        .panel > h3 {
+            margin: 0 0 16px;
+            font-size: 1.15rem;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .mini-card {
+            padding: 18px;
+            transition: none;
+        }
+
+        .mini-card i {
+            color: var(--accent);
+            font-size: 1.45rem;
+        }
+
+        .skills-group + .skills-group {
+            margin-top: 30px;
+        }
+
+        .skills-group h3 {
+            margin: 0 0 14px;
+            font-size: 1.05rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skill-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 42px;
+            padding: 8px 12px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.70);
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .skill-chip i {
+            font-size: 1.35rem;
+            color: var(--accent-strong);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.42s ease, transform 0.42s ease;
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero .reveal {
+            opacity: 1;
+            transform: none;
+        }
+
+        footer {
+            padding: 34px 20px 46px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .privacy-consent {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 30;
+            display: none;
+            width: min(420px, calc(100% - 36px));
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+
+        .privacy-consent.is-visible {
+            display: block;
+        }
+
+        .privacy-consent p {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .consent-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .consent-actions button {
+            min-height: 40px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 8px 12px;
+            background: var(--surface-soft);
+            color: var(--text);
+            font: inherit;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .consent-actions button:first-child {
+            background: var(--accent-strong);
+            border-color: var(--accent-strong);
+            color: #ffffff;
+        }
+
+        @keyframes projectSweep {
+            0%,
+            100% {
+                transform: translateX(-34%) rotate(0deg);
+            }
+
+            50% {
+                transform: translateX(34%) rotate(4deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero-layout,
+            .grid,
+            .project-grid,
+            .feature-grid,
+            .publication-grid,
+            .skills-matrix,
+            .personal-split {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait-wrap {
+                width: min(130px, 34vw);
+                transform: none;
+            }
+
+            .section-head {
+                display: block;
+            }
+
+            .section-note {
+                margin-top: 10px;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 900px) {
+            section {
+                padding: 56px 16px;
+                scroll-margin-top: 76px;
+            }
+
+            h1 {
+                font-size: clamp(2.1rem, 5vw, 2.35rem);
+                line-height: 1.05;
+            }
+
+            .nav-inner {
+                width: calc(100% - 24px);
+            }
+
+            .nav-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                position: fixed;
+                inset: 76px 12px auto 12px;
+                display: none;
+                padding: 10px;
+                border: 1px solid var(--line);
+                border-radius: 18px;
+                background: var(--surface);
+                box-shadow: var(--shadow);
+            }
+
+            body.nav-open .nav-links {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+
+            .nav-links a {
+                padding: 12px;
+            }
+
+            .achievement-item {
+                grid-template-columns: 52px 1fr;
+                align-items: start;
+            }
+
+            .achievement-date {
+                grid-column: 1 / -1;
+            }
+
+            .achievement-tags {
+                grid-column: 1 / -1;
+                justify-content: flex-start;
+                max-width: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 32px;
+            }
+
+            .timeline::before {
+                left: 7px;
+            }
+
+            .timeline .card {
+                width: calc(100% - 26px);
+                justify-self: end;
+            }
+
+            .timeline .card:nth-child(odd),
+            .timeline .card:nth-child(even) {
+                justify-self: end;
+            }
+
+            .timeline .card:nth-child(odd)::after,
+            .timeline .card:nth-child(even)::after {
+                left: -25px;
+                right: auto;
+            }
+
+            .project-card {
+                min-height: auto;
+            }
+
+            .contact-line,
+            .social-links,
+            .link-row {
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a class="brand" href="#about" data-profile="name">Miroljub Mihailovic</a>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#training">Training</a>
+            <a href="#awards">Honors</a>
+            <a href="#skills">Skills</a>
+            <a href="#languages">Languages</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section id="about" class="hero">
+        <div class="container hero-layout">
+            <div class="portrait-wrap reveal">
+                <img id="profilePhoto" src="assets/img/profile.jpg" alt="Miroljub Mihailovic">
+            </div>
+            <div class="hero-copy reveal">
+                <p class="hero-kicker" id="profileRole">PhD Candidate in Robotics and AI</p>
+                <h1 id="profileName">Miroljub Mihailovic</h1>
+                <p class="hero-summary" id="profileSummary"></p>
+                <div class="contact-line" id="contactLine"></div>
+                <div class="social-links" id="socialLinks"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Background</p>
+                    <h2>Education</h2>
+                </div>
+                <p class="section-note">Academic path and research focus.</p>
+            </div>
+            <div class="timeline" id="educationList"></div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Research</p>
+                    <h2>Publications</h2>
+                </div>
+                <p class="section-note">Click any item to read the short abstract.</p>
+            </div>
+            <div class="feature-grid publication-grid" id="publicationList"></div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Engineering</p>
+                    <h2>Other Projects</h2>
+                </div>
+                <p class="section-note">Selected software, robotics, and machine learning work.</p>
+            </div>
+            <div class="project-grid" id="projectList"></div>
+        </div>
+    </section>
+
+    <section id="experiences">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Work</p>
+                    <h2>Experiences</h2>
+                </div>
+                <p class="section-note">Industry and research roles.</p>
+            </div>
+            <div class="timeline" id="experienceList"></div>
+        </div>
+    </section>
+
+    <section id="training">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Learning</p>
+                    <h2>Workshops & Summer Schools</h2>
+                </div>
+            </div>
+            <div class="panel reveal">
+                <div class="achievement-board" id="trainingList"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Recognition</p>
+                    <h2>Awards & Scholarships</h2>
+                </div>
+            </div>
+            <div class="panel reveal">
+                <div class="achievement-board" id="awardList"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Toolbox</p>
+                    <h2>Skills</h2>
+                </div>
+            </div>
+            <div class="panel reveal" id="skillsPanel"></div>
+        </div>
+    </section>
+
+    <section id="languages">
+        <div class="container">
+            <div class="section-head reveal">
+                <div>
+                    <p class="eyebrow">Personal</p>
+                    <h2>Languages & Interests</h2>
+                </div>
+            </div>
+            <div class="personal-split">
+                <div class="personal-panel reveal">
+                    <h3>Languages</h3>
+                    <div class="language-stack" id="languageList"></div>
+                </div>
+                <div class="personal-panel reveal">
+                    <h3>Interests</h3>
+                    <div class="interest-cloud" id="interestList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <span id="footerText"></span>
+</footer>
+
+<div class="privacy-consent" id="privacyConsent" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <p>I use optional cookies and local storage only if you accept.</p>
+    <div class="consent-actions">
+        <button type="button" data-consent="accepted">Accept cookies</button>
+        <button type="button" data-consent="rejected">Decline</button>
+        <a class="pill-link" href="privacy.html">Privacy</a>
+    </div>
+</div>
+
+<script>
+    /*
+     * To update the website, edit only this object.
+     * Add or remove items from the arrays and the page updates automatically.
+     */
+    const siteData = {
+        profile: {
+            name: "Miroljub Mihailovic",
+            role: "PhD Candidate in Robotics and AI",
+            photo: "assets/img/profile.jpg",
+            location: "Vicenza, Italy",
+            email: "miroljubmihailovic98@gmail.com",
+            summary: "PhD Candidate in Robotics and AI at the University of Padua. I teach exoskeletons how to walk, think, and hopefully not trip over. My research mixes learning, perception, and motion planning to make robots move like humans adaptively, smoothly, and across different users and environments. Right now, it is all about lower-limb exoskeletons, but the ideas could just as well power humanoids.",
+            socials: [
+                { label: "LinkedIn", icon: "fab fa-linkedin", url: "https://www.linkedin.com/in/miromiha/" },
+                { label: "GitHub", icon: "fab fa-github", url: "https://github.com/mirovix" },
+                { label: "Google Scholar", icon: "fa-brands fa-google-scholar", url: "https://scholar.google.com/citations?user=mY9-J9kAAAAJ&hl=en" }
+            ]
+        },
+        cookieConsent: {
+            enabled: true,
+            endpoint: "/cookie-usage-log",
+            consentStorageKey: "miroljub_cookie_consent"
+        },
+        education: [
+            {
+                date: "11/2024 - 11/2027",
+                title: "PhD Candidate in Robotics and AI",
+                subtitle: "DEI - IAS LAB, University of Padua",
+                details: "Research on AI-driven motion planning and perception for lower-limb exoskeletons, developing learning-based control to enable adaptation to different users and environments safely and naturally."
+            },
+            {
+                date: "10/2020 - 07/2022",
+                title: "M.Sc. in Computer Engineering, AI & Robotics",
+                subtitle: "University of Padua | GPA: 28.62/30",
+                details: "Focused on Machine Learning, Artificial Intelligence, Deep Learning, Computer Vision, and Robotics. Thesis: Reinforcement Learning in Shared Intelligence Systems for Mobile Robots."
+            },
+            {
+                date: "10/2017 - 07/2020",
+                title: "B.Sc. in Computer Engineering",
+                subtitle: "University of Padua | GPA: 26/30",
+                details: "Solid foundation in computer science, mathematics, and engineering, with focus on programming, algorithms, computer architecture, operating systems, databases, and artificial intelligence."
+            }
+        ],
+        publications: [
+            {
+                icon: "fa-solid fa-shoe-prints",
+                accent: "#087f7a",
+                title: "Learning Multi-Step Footstep Planning with STL Constraints for Lower Limb Exoskeletons",
+                authors: "M. Mihailovic, D. Meli, L. Tonin, E. Menegatti, A. Farinelli, S. Tortora",
+                venue: "IEEE Robotics and Automation Letters (RA-L), Under Review, 2026",
+                details: "Developed a learning-based multi-step footstep planner for lower-limb exoskeletons integrating Signal Temporal Logic constraints for anticipatory and safety-aware locomotion. The framework combines neural predictive control with formal safety specifications to generate coordinated multi-step trajectories in cluttered environments while ensuring obstacle avoidance and goal-reaching behaviors.",
+                tags: ["Exoskeletons", "STL", "Planning"],
+                links: [{ label: "Paper Not Available Yet" }]
+            },
+            {
+                icon: "fa-solid fa-wave-square",
+                accent: "#6d5dfc",
+                title: "GEGLU-Transformer for IMU-to-EMG Estimation with Few-Shot Adaptation",
+                authors: "M. Mihailovic, L. Tonin, S. Tortora, E. Menegatti",
+                venue: "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), Under Review, 2026",
+                details: "Developed a transformer-based framework for estimating EMG signals directly from wearable IMU data using few-shot adaptation. The proposed GEGLU-Transformer captures temporal neuromuscular dynamics and enables personalized IMU-to-EMG estimation with limited calibration data.",
+                tags: ["Transformer", "Wearables", "Few-shot"],
+                links: [{ label: "DOI", url: "https://arxiv.org/abs/2604.25670" }]
+            },
+            {
+                icon: "fa-solid fa-person-walking",
+                accent: "#c8465d",
+                title: "Adaptive Gait Generation for Multi-Terrain Exoskeletons via Constrained Kernelized Movement Primitives",
+                authors: "E. Trombin, M. Mihailovic, M. H. F. Moura, L. Tonin, E. Menegatti, S. Tortora",
+                venue: "IEEE Systems, Man, and Cybernetics Society, Under Review, 2025",
+                details: "Developed an adaptive gait generation framework for lower-limb exoskeletons based on vision-guided Kernelized Movement Primitives. The approach learns human gait patterns in joint and task space and adapts trajectories in real time using RGB-D environmental perception.",
+                tags: ["Gait", "KMP", "RGB-D"],
+                links: [{ label: "DOI", url: "https://arxiv.org/abs/2605.02513" }]
+            },
+            {
+                icon: "fa-solid fa-diagram-project",
+                accent: "#d47b2b",
+                title: "Abstract: Multi-Step Planning via Signal Temporal Logic for Lower-Limb Exoskeletons",
+                authors: "M. Mihailovic, D. Meli, A. Farinelli, S. Tortora",
+                venue: "7th Italian Conference on Robotics and Intelligent Machines, Rome, 2025",
+                details: "Developed a modular control framework for adaptive exoskeleton locomotion integrating robotic vision, neural predictive control, and STL-based planning. The system produces coordinated multistep gait trajectories in real time.",
+                tags: ["Planning", "Robotics", "STL"],
+                links: [{ label: "DOI", url: "https://proceedings.i-rim.it/content/details/2025/17629704" }]
+            },
+            {
+                icon: "fa-solid fa-eye",
+                accent: "#087f7a",
+                title: "Abstract: Egocentric Vision Module for Adaptive Gait Planning in Lower-Limb Exoskeletons",
+                authors: "M. Mihailovic, M. Terreran, S. Ghidoni, A. Pretto, L. Tonin, E. Menegatti, S. Tortora",
+                venue: "7th Italian Conference on Robotics and Intelligent Machines, Rome, 2025",
+                details: "Developed an egocentric vision framework combining exoskeleton-mounted and AR visor cameras to build a unified 3D map for adaptive gait planning and real-time obstacle avoidance.",
+                tags: ["Vision", "Mapping", "AR"],
+                links: [{ label: "DOI", url: "https://proceedings.i-rim.it/content/details/2025/17629782" }]
+            },
+            {
+                icon: "fa-solid fa-satellite-dish",
+                accent: "#6d5dfc",
+                title: "Autonomous Docking Manoeuvre Testing in the Framework of the ERMES Experiment",
+                authors: "A. Bortotto, G. Degli Agli, N. Pozzato, M. Dignani, F. Favotto, F. Mattiazzi, M. Mihailovic, et al.",
+                venue: "Aerotecnica Missili & Spazio (Springer), 2022",
+                details: "Experimental validation of an autonomous rendezvous and docking framework for CubeSat mock-ups in microgravity. The system integrates sensor fusion, relative navigation, and real-time control.",
+                tags: ["Space", "Docking", "Control"],
+                links: [{ label: "DOI", url: "https://doi.org/10.1007/s42496-025-00247-7" }]
+            },
+            {
+                icon: "fa-solid fa-rocket",
+                accent: "#c8465d",
+                title: "ERMES: Experimental Rendezvous in Microgravity Environment Study",
+                authors: "A. Bortotto, G. Degli Agli, F. Favotto, F. Mattiazzi, M. Mihailovic, et al.",
+                venue: "72nd International Astronautical Congress (IAC), Dubai, 2021",
+                details: "The ERMES project investigates autonomous docking strategies for nano satellites under microgravity conditions. A hardware-in-the-loop setup was deployed aboard parabolic flights.",
+                tags: ["Microgravity", "CubeSat", "IAC"],
+                links: [
+                    { label: "Conference Page", url: "https://dl.iafastro.directory/event/IAC-2021/paper/66232/" },
+                    { label: "PDF", url: "https://github.com/mirovix/ProjectsPapers/blob/main/Papers/Paper%2C%2072nd%20International%20Astronautical%20Congress%20(IAC)%2C%20Dubai.pdf" }
+                ]
+            }
+        ],
+        projects: [
+            {
+                icon: "fa-solid fa-code-branch",
+                accent: "#087f7a",
+                title: "Code Refactoring for ROS-Neuro",
+                summary: "Unit testing and code refactoring to improve reliability and scalability.",
+                details: "Executed unit tests and code refactoring for ROS-Neuro to improve reliability, validate functionality, and optimize the codebase for maintenance and scalability.",
+                tags: ["ROS", "Testing", "Refactoring"],
+                links: [{ label: "Code", url: "https://github.com/rosneuro/" }]
+            },
+            {
+                icon: "fa-solid fa-satellite",
+                accent: "#6d5dfc",
+                title: "ERMES Project - Autonomous Docking Manoeuvre Testing for CubeSats",
+                summary: "ESA Fly Your Thesis! Programme - University of Padua.",
+                details: "Designed and implemented the CubeSat's Onboard Computer System, control logic, and sensor fusion algorithms for real-time autonomous docking under microgravity conditions.",
+                tags: ["Space", "Control", "Sensor Fusion"]
+            },
+            {
+                icon: "fa-solid fa-route",
+                accent: "#c8465d",
+                title: "Reinforcement Learning in Shared Intelligence Systems for Mobile Robots",
+                summary: "RL-based obstacle avoidance for teleoperated robots.",
+                details: "Developed a reinforcement learning policy integrated into a shared teleoperation system. The agent navigates unknown environments with obstacle avoidance and was compared to traditional rule-based policies for safety and efficiency.",
+                tags: ["RL", "Robotics", "Navigation"],
+                links: [
+                    { label: "Code", url: "https://github.com/mirovix/Master_Thesis" },
+                    { label: "Thesis", url: "https://github.com/mirovix/Master_Thesis/blob/main/Reinforcement_learning_in_shared_intelligence_systems_for_mobile_robots.pdf" }
+                ]
+            }
+        ],
+        experiences: [
+            {
+                date: "11/2024 - 12/2025",
+                title: "ML Researcher",
+                subtitle: "Nordest Technology",
+                details: "Machine learning researcher providing time-limited support for development of algorithms and models for detecting Anti-Money Laundering activities, data preprocessing, model validation, and alert optimization."
+            },
+            {
+                date: "01/2023 - 11/2024",
+                title: "Lead Software Engineer in Machine Learning",
+                subtitle: "Nordest Technology",
+                details: "Led development efforts for AI and ML-based products designed for Anti-Money Laundering detection. Oversaw development of Prioritas and Kassandra, optimized AML alert processing, reduced false positives, and enhanced transaction monitoring efficiency."
+            },
+            {
+                date: "04/2022 - 01/2023",
+                title: "Software Engineer in Machine Learning",
+                subtitle: "Nordest Technology",
+                details: "Developed Prioritas, a machine learning system that ranks AML alerts by risk, reducing false positives and speeding up suspicious activity reporting by up to 80%."
+            },
+            {
+                date: "12/2021 - 11/2022",
+                title: "Software Engineer",
+                subtitle: "European Space Agency (ESA) & DII (University of Padua)",
+                details: "Research on autonomous rendezvous and docking of CubeSat mock-ups in microgravity. Designed and implemented the Onboard Computer System, control architecture, and sensor fusion algorithms for real-time guidance and docking."
+            },
+            {
+                date: "10/2021 - 07/2022",
+                title: "Research Engineer Intern",
+                subtitle: "DEI, IAS LAB (University of Padua)",
+                details: "Developed a policy-based reinforcement learning system for teleoperated mobile robots. Enabled robots to navigate unknown indoor environments while avoiding static and dynamic obstacles."
+            }
+        ],
+        training: [
+            {
+                icon: "fas fa-chalkboard-teacher",
+                accent: "#087f7a",
+                date: "2025",
+                type: "Workshop",
+                title: "ECMR 2025 - Workshop on Learning and Planning for Intelligent Robots",
+                summary: "University of Padua",
+                details: "Presented the short paper Multi-Step Planning via Signal Temporal Logic for Lower-Limb Exoskeletons at the European Conference on Mobile Robots.",
+                tags: ["Workshop", "Planning", "Robotics"],
+                url: "https://ecmr2025.dei.unipd.it/"
+            },
+            {
+                icon: "fas fa-graduation-cap",
+                accent: "#6d5dfc",
+                date: "2025",
+                type: "Summer School",
+                title: "Cambridge Summer School on Machine Learning 2025",
+                summary: "University of Cambridge",
+                details: "Attended lectures and research sessions on probabilistic models, generative models, and causality.",
+                tags: ["ML", "Causality", "Generative Models"],
+                url: "https://www.ellis.eng.cam.ac.uk/summer-school/"
+            },
+            {
+                icon: "fas fa-brain",
+                accent: "#c8465d",
+                date: "2025",
+                type: "International School",
+                title: "DeepLearn 2025 - 12th International School on Deep Learning",
+                summary: "IRDTA International Research School",
+                details: "Attended advanced lectures on transfer learning, explainability, and hyperbolic deep learning.",
+                tags: ["Deep Learning", "Explainability", "Transfer"],
+                url: "https://deeplearn.irdta.eu/2025/"
+            }
+        ],
+        awards: [
+            {
+                icon: "fas fa-rocket",
+                accent: "#087f7a",
+                date: "2025",
+                type: "Competition",
+                title: "3rd Place - Exoplanet Search Machine Learning Challenge 2025",
+                summary: "Porto",
+                details: "Trained a deep learning model on simulated disk images to recognize structural signatures caused by an embedded planet.",
+                tags: ["Challenge", "Computer Vision", "ML"],
+                url: "https://github.com/ML4SCI/DeepLearnHackathon/tree/main/ExoplanetSearchChallenge"
+            },
+            {
+                icon: "fas fa-award",
+                accent: "#d47b2b",
+                date: "2025",
+                type: "Scholarship",
+                title: "Cambridge Summer School Scholarship & Grant 2025",
+                summary: "Merit-based scholarship and GBP 300 research grant",
+                details: "Awarded a merit-based scholarship and a GBP 300 grant to attend the ELLIS Summer School on Machine Learning at the University of Cambridge.",
+                tags: ["Scholarship", "Grant", "Cambridge"],
+                url: "https://www.ellis.eng.cam.ac.uk/summer-school/"
+            },
+            {
+                icon: "fas fa-user-friends",
+                accent: "#6d5dfc",
+                date: "2022-2025",
+                type: "Mentorship",
+                title: "LeadTheFuture STEM Mentorship (2022-2025)",
+                summary: "National Mentorship Program - Italy",
+                details: "Selected among top Italian students for mentorship in STEM leadership and professional growth.",
+                tags: ["Mentorship", "STEM", "Leadership"]
+            },
+            {
+                icon: "fas fa-trophy",
+                accent: "#c8465d",
+                date: "2018",
+                type: "Competition",
+                title: "2nd Place - NASA Space Apps Challenge 2018",
+                summary: "Vicenza - Prize: EUR 1000",
+                details: "Designed a concept of smart robotic suits for autonomous localization and mobility in planetary environments.",
+                tags: ["NASA", "Robotics", "Prize"]
+            },
+            {
+                icon: "fas fa-trophy",
+                accent: "#087f7a",
+                date: "2017",
+                type: "Competition",
+                title: "2nd Place - NASA Space Apps Challenge 2017",
+                summary: "Vicenza",
+                details: "Developed an optical wireless communication system using visible light.",
+                tags: ["NASA", "Li-Fi", "Prototype"]
+            }
+        ],
+        skills: [
+            {
+                icon: "fa-solid fa-code",
+                accent: "#087f7a",
+                title: "Programming Languages",
+                items: [
+                    { label: "C++", icon: "devicon-cplusplus-plain" },
+                    { label: "C", icon: "devicon-c-plain" },
+                    { label: "Python", icon: "devicon-python-plain" },
+                    { label: "MATLAB", icon: "devicon-matlab-plain" }
+                ]
+            },
+            {
+                icon: "fa-solid fa-brain",
+                accent: "#6d5dfc",
+                title: "Main Tools",
+                items: [
+                    { label: "PyTorch", icon: "devicon-pytorch-plain" },
+                    { label: "TensorFlow", icon: "devicon-tensorflow-original" },
+                    { label: "ROS", icon: "devicon-ros-original" },
+                    { label: "scikit-learn", icon: "devicon-scikitlearn-plain" },
+                    { label: "Keras", icon: "devicon-keras-plain" },
+                    { label: "OpenCV", icon: "devicon-opencv-plain" },
+                    { label: "Pandas", icon: "devicon-pandas-plain" },
+                    { label: "SQL", icon: "devicon-azuresqldatabase-plain" },
+                    { label: "Flask", icon: "devicon-flask-original" },
+                    { label: "Pytest", icon: "devicon-pytest-plain" }
+                ]
+            },
+            {
+                icon: "fa-solid fa-microchip",
+                accent: "#d47b2b",
+                title: "Technologies",
+                items: [
+                    { label: "Windows", icon: "devicon-windows11-original" },
+                    { label: "Ubuntu", icon: "devicon-ubuntu-plain" },
+                    { label: "Arduino", icon: "devicon-arduino-plain" },
+                    { label: "Raspberry Pi", icon: "devicon-raspberrypi-plain" },
+                    { label: "Git", icon: "devicon-git-plain" },
+                    { label: "GitHub", icon: "devicon-github-original" },
+                    { label: "LaTeX", icon: "devicon-latex-original" }
+                ]
+            }
+        ],
+        languages: [
+            { icon: "fas fa-flag", accent: "#087f7a", title: "Italian", summary: "native", level: 100 },
+            { icon: "fas fa-globe-europe", accent: "#6d5dfc", title: "English", summary: "fluent", level: 88 },
+            { icon: "fas fa-language", accent: "#c8465d", title: "Serbian", summary: "native", level: 100 }
+        ],
+        interests: [
+            { icon: "fas fa-robot", accent: "#087f7a", title: "AI Robotics" },
+            { icon: "fas fa-chess", accent: "#6d5dfc", title: "Chess" },
+            { icon: "fas fa-dumbbell", accent: "#d47b2b", title: "Bodybuilding Fitness" },
+            { icon: "fas fa-running", accent: "#c8465d", title: "Running" },
+            { icon: "fas fa-bicycle", accent: "#087f7a", title: "Cycling" }
+        ]
+    };
+
+    const icon = (name) => `<i class="${name}" aria-hidden="true"></i>`;
+    const text = (value = "") => String(value);
+
+    function linkList(links = []) {
+        if (!links.length) return "";
+        return `<div class="link-row">${links.map((link) => {
+            if (!link.url) return `<span class="pill-link">${text(link.label)}</span>`;
+            return `<a class="pill-link" href="${link.url}" target="_blank" rel="noreferrer">${text(link.label)}</a>`;
+        }).join("")}</div>`;
+    }
+
+    function expandableCard(item) {
+        return `
+            <article class="card reveal">
+                <button type="button" aria-expanded="false">
+                    ${item.date ? `<div class="meta">${text(item.date)}</div>` : ""}
+                    <h3>${text(item.title)}</h3>
+                    ${item.subtitle ? `<p>${text(item.subtitle)}</p>` : ""}
+                    ${item.authors ? `<p><em>${text(item.authors)}</em></p>` : ""}
+                    ${item.venue ? `<p>${text(item.venue)}</p>` : ""}
+                    ${item.summary ? `<p>${text(item.summary)}</p>` : ""}
+                    <span class="toggle-hint">Details ${icon("fa-solid fa-chevron-down")}</span>
+                </button>
+                ${item.details ? `<div class="details"><p>${text(item.details)}</p></div>` : ""}
+                ${linkList(item.links)}
+            </article>
+        `;
+    }
+
+    function projectCard(item, index) {
+        const tags = item.tags || [];
+        return `
+            <article class="card project-card reveal interactive-card" style="--project-accent: ${item.accent || "#087f7a"}">
+                <div class="project-visual" aria-hidden="true">
+                    <span class="project-glyph">${icon(item.icon || "fa-solid fa-diagram-project")}</span>
+                    <span class="project-index">${String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <div class="project-body">
+                    <button type="button" aria-expanded="false">
+                        <h3>${text(item.title)}</h3>
+                        ${item.summary ? `<p>${text(item.summary)}</p>` : ""}
+                        ${tags.length ? `<div class="project-tags">${tags.map((tag) => `<span>${text(tag)}</span>`).join("")}</div>` : ""}
+                        <span class="toggle-hint">Details ${icon("fa-solid fa-chevron-down")}</span>
+                    </button>
+                    ${item.details ? `<div class="details"><p>${text(item.details)}</p></div>` : ""}
+                </div>
+                ${linkList(item.links)}
+            </article>
+        `;
+    }
+
+    function publicationCard(item, index) {
+        const tags = item.tags || [];
+        return `
+            <article class="card feature-card publication-card reveal" style="--feature-accent: ${item.accent || "#087f7a"}">
+                <div class="feature-top" aria-hidden="true">
+                    <span class="feature-icon">${icon(item.icon || "fa-solid fa-file-lines")}</span>
+                    <span class="feature-number">${String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <button type="button" aria-expanded="false">
+                    <div class="feature-meta">${text(item.venue || "")}</div>
+                    <h3>${text(item.title)}</h3>
+                    ${item.authors ? `<p><em>${text(item.authors)}</em></p>` : ""}
+                    ${tags.length ? `<div class="feature-tags">${tags.map((tag) => `<span>${text(tag)}</span>`).join("")}</div>` : ""}
+                    <span class="toggle-hint">Details ${icon("fa-solid fa-chevron-down")}</span>
+                </button>
+                ${item.details ? `<div class="details"><p>${text(item.details)}</p></div>` : ""}
+                ${linkList(item.links)}
+            </article>
+        `;
+    }
+
+    function featureCard(item, index) {
+        const meta = item.venue || item.summary || item.authors || "";
+        const tags = item.tags || [];
+        const links = item.links || (item.url ? [{ label: "Open", url: item.url }] : []);
+        return `
+            <article class="card feature-card reveal interactive-card" style="--feature-accent: ${item.accent || "#087f7a"}">
+                <div class="feature-top" aria-hidden="true">
+                    <span class="feature-icon">${icon(item.icon || "fa-solid fa-circle-dot")}</span>
+                    <span class="feature-number">${String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <button type="button" aria-expanded="false">
+                    ${meta ? `<div class="feature-meta">${text(meta)}</div>` : ""}
+                    <h3>${text(item.title)}</h3>
+                    ${item.authors && item.venue ? `<p><em>${text(item.authors)}</em></p>` : ""}
+                    ${item.summary && item.venue ? `<p>${text(item.summary)}</p>` : ""}
+                    ${tags.length ? `<div class="feature-tags">${tags.map((tag) => `<span>${text(tag)}</span>`).join("")}</div>` : ""}
+                    ${item.details ? `<span class="toggle-hint">Details ${icon("fa-solid fa-chevron-down")}</span>` : ""}
+                </button>
+                ${item.details ? `<div class="details"><p>${text(item.details)}</p></div>` : ""}
+                ${linkList(links)}
+            </article>
+        `;
+    }
+
+    function achievementItem(item) {
+        const tags = item.tags || [];
+        const title = item.url ? `<a href="${item.url}" target="_blank" rel="noreferrer">${text(item.title)}</a>` : text(item.title);
+        return `
+            <article class="achievement-item reveal" style="--feature-accent: ${item.accent || "#087f7a"}">
+                <div class="achievement-date">${text(item.date || item.type || "")}</div>
+                <div class="achievement-icon">${icon(item.icon || "fa-solid fa-award")}</div>
+                <div class="achievement-main">
+                    <h3>${title}</h3>
+                    <p>${text(item.type || item.summary || "")}${item.type && item.summary ? ` - ${text(item.summary)}` : ""}</p>
+                </div>
+                ${tags.length ? `<div class="achievement-tags">${tags.map((tag) => `<span>${text(tag)}</span>`).join("")}</div>` : ""}
+            </article>
+        `;
+    }
+
+    function miniCard(item) {
+        const title = item.url ? `<a href="${item.url}" target="_blank" rel="noreferrer">${text(item.title)}</a>` : text(item.title);
+        return `
+            <article class="mini-card reveal">
+                ${item.icon ? icon(item.icon) : ""}
+                <h3>${title}</h3>
+                ${item.summary ? `<p>${text(item.summary)}</p>` : ""}
+                ${item.details ? `<div class="details"><p>${text(item.details)}</p></div><span class="toggle-hint">Details ${icon("fa-solid fa-chevron-down")}</span>` : ""}
+            </article>
+        `;
+    }
+
+    function languageRow(item) {
+        return `
+            <div class="language-row reveal" style="--feature-accent: ${item.accent || "#087f7a"}">
+                ${icon(item.icon || "fa-solid fa-language")}
+                <div>
+                    <strong>${text(item.title)}</strong>
+                    <span>${text(item.summary)}</span>
+                </div>
+                <div class="level-bar" style="--level: ${Number(item.level || 100)}%"></div>
+            </div>
+        `;
+    }
+
+    function interestToken(item) {
+        return `
+            <span class="interest-token reveal" style="--feature-accent: ${item.accent || "#087f7a"}">
+                ${icon(item.icon || "fa-solid fa-circle-dot")}
+                ${text(item.title)}
+            </span>
+        `;
+    }
+
+    function render() {
+        const { profile } = siteData;
+        document.title = profile.name;
+        document.querySelectorAll("[data-profile='name']").forEach((el) => { el.textContent = profile.name; });
+        document.getElementById("profileName").textContent = profile.name;
+        document.getElementById("profileRole").textContent = profile.role;
+        document.getElementById("profileSummary").textContent = profile.summary;
+        document.getElementById("profilePhoto").src = profile.photo;
+        document.getElementById("profilePhoto").alt = profile.name;
+        document.getElementById("contactLine").innerHTML = `
+            <span>${text(profile.location)}</span>
+            <a href="mailto:${profile.email}">${text(profile.email)}</a>
+        `;
+        document.getElementById("socialLinks").innerHTML = profile.socials.map((social) => `
+            <a class="icon-link" href="${social.url}" target="_blank" rel="noreferrer" aria-label="${social.label}" title="${social.label}">
+                ${icon(social.icon)}
+            </a>
+        `).join("");
+        document.getElementById("educationList").innerHTML = siteData.education.map(expandableCard).join("");
+        document.getElementById("publicationList").innerHTML = siteData.publications.map(publicationCard).join("");
+        document.getElementById("projectList").innerHTML = siteData.projects.map(projectCard).join("");
+        document.getElementById("experienceList").innerHTML = siteData.experiences.map(expandableCard).join("");
+        document.getElementById("trainingList").innerHTML = siteData.training.map(achievementItem).join("");
+        document.getElementById("awardList").innerHTML = siteData.awards.map(achievementItem).join("");
+        document.getElementById("languageList").innerHTML = siteData.languages.map(languageRow).join("");
+        document.getElementById("interestList").innerHTML = siteData.interests.map(interestToken).join("");
+        document.getElementById("skillsPanel").innerHTML = `<div class="skills-matrix">${siteData.skills.map((group, index) => `
+            <article class="card feature-card skill-card reveal interactive-card" style="--feature-accent: ${group.accent || "#087f7a"}">
+                <div class="feature-top" aria-hidden="true">
+                    <span class="feature-icon">${icon(group.icon || "fa-solid fa-toolbox")}</span>
+                    <span class="feature-number">${String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <h3>${text(group.title)}</h3>
+                <ul class="skills-list">
+                    ${group.items.map((item) => `<li class="skill-chip">${item.icon ? icon(item.icon) : ""}<span>${text(item.label)}</span></li>`).join("")}
+                </ul>
+            </article>
+        `).join("")}</div>`;
+        document.getElementById("footerText").textContent = `${profile.name} - ${new Date().getFullYear()}`;
+    }
+
+    function bindInteractions() {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        navToggle.addEventListener("click", () => {
+            const isOpen = document.body.classList.toggle("nav-open");
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+        navLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                document.body.classList.remove("nav-open");
+                navToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            const button = event.target.closest(".card button");
+            if (button) {
+                const card = button.closest(".card");
+                const isOpen = card.classList.toggle("is-open");
+                button.setAttribute("aria-expanded", String(isOpen));
+                return;
+            }
+
+            const mini = event.target.closest(".mini-card");
+            if (mini && mini.querySelector(".details") && !event.target.closest("a")) {
+                mini.classList.toggle("is-open");
+            }
+        });
+
+        const sections = document.querySelectorAll("main section");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) entry.target.classList.add("is-visible");
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                document.querySelectorAll(".nav-links a").forEach((link) => {
+                    link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+                });
+            });
+        }, { rootMargin: "-40% 0px -52% 0px", threshold: 0 });
+        sections.forEach((section) => navObserver.observe(section));
+
+    }
+
+    function collectUsagePayload() {
+        return {
+            type: "pageview",
+            page: location.pathname,
+            title: document.title,
+            referrer: document.referrer || null,
+            language: navigator.language || null,
+            languages: navigator.languages || [],
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || null,
+            viewport: {
+                width: window.innerWidth,
+                height: window.innerHeight
+            },
+            screen: {
+                width: window.screen ? window.screen.width : null,
+                height: window.screen ? window.screen.height : null,
+                pixelRatio: window.devicePixelRatio || 1
+            },
+            userAgent: navigator.userAgent,
+            platform: navigator.platform || null,
+            connection: navigator.connection ? {
+                effectiveType: navigator.connection.effectiveType || null,
+                downlink: navigator.connection.downlink || null,
+                rtt: navigator.connection.rtt || null
+            } : null,
+            timestamp: new Date().toISOString()
+        };
+    }
+
+    function sendUsageLog() {
+        if (!siteData.cookieConsent.enabled) return;
+        if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+        const payload = collectUsagePayload();
+        fetch(siteData.cookieConsent.endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+            keepalive: true
+        }).catch(() => {});
+    }
+
+    function bindCookieConsent() {
+        const config = siteData.cookieConsent;
+        const banner = document.getElementById("privacyConsent");
+        if (!config.enabled || !banner) return;
+
+        const currentConsent = localStorage.getItem(config.consentStorageKey);
+        if (currentConsent === "accepted") {
+            sendUsageLog();
+            return;
+        }
+        if (currentConsent === "rejected") return;
+
+        banner.classList.add("is-visible");
+        banner.addEventListener("click", (event) => {
+            const button = event.target.closest("[data-consent]");
+            if (!button) return;
+            const value = button.getAttribute("data-consent");
+            localStorage.setItem(config.consentStorageKey, value);
+            banner.classList.remove("is-visible");
+            if (value === "accepted") sendUsageLog();
+        });
+    }
+
+    render();
+    bindInteractions();
+    bindCookieConsent();
+</script>
+</body>
+</html>
